@@ -3,6 +3,7 @@ import config from '@payload-config'
 import Image from 'next/image'
 import { getPayload } from 'payload'
 import Link from 'next/link'
+import { Button } from '@/components/ui/button'
 
 export default async function HeaderServer() {
   // Initialize Payload
@@ -17,14 +18,14 @@ export default async function HeaderServer() {
   }
 
   return (
-    <div className="py-12">
+    <div className="flex justify-between items-center px-4 ">
       {/* Logo Section */}
-      <div className="relative h-20 flex justify-center items-center">
+      <div className="relative h-20 w-20 flex justify-center items-center">
         <Image
           src={header.logo.url}
           fill
           className="object-contain"
-          alt="logo"
+          alt={header.logo.alt}
           priority // Ensures the logo is prioritized for loading
         />
       </div>
@@ -35,15 +36,15 @@ export default async function HeaderServer() {
           <Link
             key={index}
             href={item.link}
-            className="text-lg font-medium text-gray-700 hover:text-blue-600 transition-colors"
+            className=" font-sm text-[#2a2a2c] opacity-60 hover:text-blue-600 transition-colors"
           >
             {item.text}
           </Link>
         ))}
       </div>
-      <div>
-        <button>login</button>
-        <button>login</button>
+      <div className="flex gap-4">
+        <Button className="px-5 py-3 text-sm ">login</Button>
+        <Button className="px-5 py-3 bg-[#2a2a2c] text-sm text-white">Register</Button>
       </div>
     </div>
   )
