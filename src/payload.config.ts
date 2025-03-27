@@ -13,6 +13,7 @@ import { Media } from './collections/Media'
 import { Pages } from './collections/Pages'
 import Header from './globals/Header'
 import Footer from './globals/Footer'
+import { Testimonials } from './blocks/testimonials/schema'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
